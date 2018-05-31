@@ -31,6 +31,7 @@ class Student {
 		virtual void getDegreeProgram() = 0;
 
 	private:
+		static const size_t NUMDAYS = 3;
 		
 		//data members
 		int student_ID;
@@ -38,7 +39,7 @@ class Student {
 		std::string last_name;
 		std::string email_address;
 		int age;
-		int num_of_days[3];
+		int num_of_days[NUMDAYS];
 
 
 };

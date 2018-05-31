@@ -17,7 +17,6 @@ string Student::get_last_name() {
 	return last_name;
 }
 
-
 string Student::get_email_address() {
 	return email_address;
 }
@@ -25,7 +24,6 @@ string Student::get_email_address() {
 int Student::get_age() {
 	return age;
 }
-
 
 int Student::get_num_days() {
 	return num_of_days[3];
@@ -67,39 +65,48 @@ void Student::set_num_days(int day_val[]) {
 
 //Constructors
 Student::Student() {
-	int student_ID = 0;
-	string first_name = "Automatic First";
-	string last_name = "Automatic Last";
-	string email_address = "Automatic@email.com";
-	int age = 0;
-	int num_of_days[3] = {0,0,0};
-	return;
+	student_ID = 0;
+	first_name = "Automatic First";
+	last_name = "Automatic Last";
+	email_address = "Automatic@email.com";
+	age = 0;
+	for (int i = 0; i < NUMDAYS; ++i) {
+		num_of_days[i] = 0;
+	}
 }
+
 Student::Student(int param_ID, string param_first, string param_last, string param_email, int param_age, int day_val[]) {
-	int student_ID = param_ID;
-	string first_name = param_first;
-	string last_name = param_last;
-	string email_address = param_email;
-	int age = param_age;
-	int num_of_days[3] = {day_val[0], day_val[1], day_val[2]};
-	return;
+	student_ID = param_ID;
+	first_name = param_first;
+	last_name = param_last;
+	email_address = param_email;
+	age = param_age;
+	for (int i = 0; i < NUMDAYS; ++i) {
+		num_of_days[i] = day_val[i];
+	}
 }
 
 //Destructor
 Student::~Student() {
-	return;
 }
 
 //Virtual Functions
 void Student::print() {
+	std::cout << student_ID << "\t";
+	std::cout << "First Name: " << first_name << "\t";
+	std::cout << "Last Name: " << last_name << "\t";
+	std::cout << "Age: " << age << "\t";
+	std::cout << "daysInCourse: {";
+	for (int i = 0; i < NUMDAYS; ++) {
+		if (i != 0) {
+			std::cout << ",";
+		}
+		std::cout << num_of_days[i];
+	}
+	std::cout << "}\t";
+	// TODO: degreeePrograamamaamamam
 
-	std::cout << get_student_ID() << "\t"
-	std::cout << "First Name: " << get_first_name() << "\t"
-	std::cout << "Last Name: " << get_last_name() << "\t"
-	std::cout << "Age: " << get_age() << "\t"
-	std::cout << "daysInCourse: " << get_num_days() << "\t"
-
-	return;
+	std::cout << std::endl;
 }
 
 void Student::getDegreeProgram() {
