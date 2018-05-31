@@ -4,7 +4,7 @@
 #include <string>
 
 //Defined subclass of student: Network Student
-class NetworkStudent : public student {
+class NetworkStudent : public Student {
 public:
 
 	//Overide student getDegreeProgram()
@@ -15,5 +15,5 @@ public:
 private:
 
 	//define DegreeProgram
-	degreePrograms degree_program;
+	DegreePrograms degree_program;
 };
