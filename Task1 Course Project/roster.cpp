@@ -43,6 +43,14 @@ void Roster::remove(int studentID) {
 	std::cout << "Error: Student ID does not exist" << std::endl;
 }
 
+void Roster::printAll() {
+	
+	for (std::vector<Student*>::iterator it = class_roster_array.begin(); it != class_roster_array.end(); ++it {
+		(*it)->print();
+	}
+
+}
+
 int main() {
 
 	Roster classRosterArray[5];

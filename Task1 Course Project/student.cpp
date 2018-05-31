@@ -1,4 +1,5 @@
 #include<string>
+#include<iostream>
 #include"./student.h"
 using namespace std;
 
@@ -91,6 +92,13 @@ Student::~Student() {
 
 //Virtual Functions
 void Student::print() {
+
+	std::cout << get_student_ID() << "\t"
+	std::cout << "First Name: " << get_first_name() << "\t"
+	std::cout << "Last Name: " << get_last_name() << "\t"
+	std::cout << "Age: " << get_age() << "\t"
+	std::cout << "daysInCourse: " << get_num_days() << "\t"
+
 	return;
 }
 
