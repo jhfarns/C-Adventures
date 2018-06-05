@@ -107,6 +107,7 @@ void Student::print() {
 	// TODO: degreeePrograamamaamamam
 
 	std::cout << std::endl;
+
 }
 
 void Student::getDegreeProgram() {
