@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
+#include "degree.h"
 
 class Student {
 	public:
 		//get functions
-		int get_student_ID();
+		std::string get_student_ID();
 		std::string get_first_name();
 		std::string get_last_name();
 		std::string get_email_address();
@@ -20,21 +21,20 @@ class Student {
 		void set_num_days(int day_vals[]);
 
 		//constructors
-		Student();
-		Student(int param_ID, std::string param_first, std::string param_last, std::string param_email, int param_age, int day_val[]);
+		Student(std::string param_ID, std::string param_first, std::string param_last, std::string param_email, int param_age, int day_val[]);
 		
 		//destructor
 		virtual ~Student();
 
 		//virtual functions
 		virtual void print();
-		virtual void getDegreeProgram() = 0;
+		virtual Degree getDegreeProgram() = 0;
 
 	private:
 		static const size_t NUMDAYS = 3;
 		
 		//data members
-		int student_ID;
+		std::string student_ID;
 		std::string first_name;
 		std::string last_name;
 		std::string email_address;

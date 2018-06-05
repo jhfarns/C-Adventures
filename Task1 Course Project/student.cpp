@@ -5,7 +5,7 @@ using namespace std;
 
 
 //Initialize get functions for student.h file
-int Student::get_student_ID() {
+std::string Student::get_student_ID() {
 	return student_ID;
 }
 
@@ -64,18 +64,7 @@ void Student::set_num_days(int day_val[]) {
 }
 
 //Constructors
-Student::Student() {
-	student_ID = 0;
-	first_name = "Automatic First";
-	last_name = "Automatic Last";
-	email_address = "Automatic@email.com";
-	age = 0;
-	for (int i = 0; i < NUMDAYS; ++i) {
-		num_of_days[i] = 0;
-	}
-}
-
-Student::Student(int param_ID, string param_first, string param_last, string param_email, int param_age, int day_val[]) {
+Student::Student(std::string param_ID, string param_first, string param_last, string param_email, int param_age, int day_val[]) {
 	student_ID = param_ID;
 	first_name = param_first;
 	last_name = param_last;
@@ -97,22 +86,22 @@ void Student::print() {
 	std::cout << "Last Name: " << last_name << "\t";
 	std::cout << "Age: " << age << "\t";
 	std::cout << "daysInCourse: {";
-	for (int i = 0; i < NUMDAYS; ++) {
+	for (int i = 0; i < NUMDAYS; ++i) {
 		if (i != 0) {
 			std::cout << ",";
 		}
 		std::cout << num_of_days[i];
 	}
 	std::cout << "}\t";
-	// TODO: degreeePrograamamaamamam
+	
+	std::cout << "Degree Program: " << getDegreeProgram();
+	//Put in a switch statement for me :) so I don't print out a 1
 
 	std::cout << std::endl;
-
+	
+	
 }
 
-void Student::getDegreeProgram() {
-	return;
-}
 
 
 

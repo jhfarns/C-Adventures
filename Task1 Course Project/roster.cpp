@@ -16,24 +16,27 @@ const std::string studentData[] = {
 
 
 
-void Roster::add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreePrograms degreeProgram) {
+void Roster::add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degreeProgram) {
 	Student* student = NULL;
+	
+	int dayval[3] = {daysInCourse1,daysInCourse2,daysInCourse3};
+
 	switch (degreeProgram) {
 	case SECURITY:
-		student = new SecurityStudent(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3);
+		student = new SecurityStudent(studentID, firstName, lastName, emailAddress, age, dayval);
 		break;
 	case NETWORK:
-		student = new NetworkStudent(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3);
+		student = new NetworkStudent(studentID, firstName, lastName, emailAddress, age, dayval);
 		break;
 	case SOFTWARE:
-		student = new SoftwareStudent(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3);
+		student = new SoftwareStudent(studentID, firstName, lastName, emailAddress, age, dayval);
 		break;
 	}
 
 	class_roster_array.push_back(student);
 }
 
-void Roster::remove(int studentID) {
+void Roster::remove(std::string studentID) {
 	for (std::vector<Student*>::iterator it = class_roster_array.begin(); it != class_roster_array.end(); ++it) {
 		if ((*it)->get_student_ID() == studentID) {
 			class_roster_array.erase(it);
@@ -45,7 +48,7 @@ void Roster::remove(int studentID) {
 
 void Roster::printAll() {
 	
-	for (std::vector<Student*>::iterator it = class_roster_array.begin(); it != class_roster_array.end(); ++it {
+	for (std::vector<Student*>::iterator it = class_roster_array.begin(); it != class_roster_array.end(); ++it) {
 		(*it)->print();
 	}
 
@@ -53,8 +56,11 @@ void Roster::printAll() {
 
 int main() {
 
-	Roster classRosterArray[5];
+	Roster roster;
+	
+	roster.add("A2", "Suzan", "Erickson", "Erickson_1990@gmailcom", 19, 50, 30, 40, NETWORK);
+	roster.printAll();
 
-//	system("pause");
+	system("pause");
 	return 0;
 }

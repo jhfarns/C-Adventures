@@ -6,12 +6,13 @@
 //Defined subclass of student: Network Student
 class SecurityStudent : public Student {
 public:
+	//Constructor
+	SecurityStudent(std::string param_ID, std::string param_first, std::string param_last, std::string param_email, int param_age, int day_val[]);
 
 	//Overide student getDegreeProgram()
-	void getDegreeProgram();
-	void setDegreeProgram();
+	Degree getDegreeProgram();
 private:
 
 	//define DegreeProgram
-	DegreePrograms degree_program;
+	Degree degree_program;
 };
