@@ -139,6 +139,8 @@ std::vector<Student*> Roster::get_class_roster_array() {
 	return class_roster_array;
 }
 
+Roster::~Roster() {
+}
 
 const int NUM_STUDENTS = 5;
 const std::string studentData[NUM_STUDENTS] =
@@ -237,6 +239,8 @@ int main() {
 	classRoster->remove("A3");
 	std::cout << "---------------------------------------------------------------------" << std::endl << std::endl;
 	std::cout << "---------------------------------------------------------------------" << std::endl << std::endl;
+
+	delete classRoster;
 
 	system("pause");
 	return 0;

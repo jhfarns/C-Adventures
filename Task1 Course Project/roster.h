@@ -17,6 +17,7 @@ class Roster {
 		//Constructor
 
 		//Deconstructor
+		~Roster();
 
 	private:
 		std::vector<Student*> class_roster_array;
