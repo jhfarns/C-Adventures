@@ -232,8 +232,11 @@ int main() {
 	classRoster->printByDegreeProgram(SOFTWARE);
 	std::cout << "---------------------------------------------------------------------" << std::endl << std::endl;
 
+	std::cout << "---------------------------------------------------------------------" << std::endl;
 	classRoster->remove("A3");
 	classRoster->remove("A3");
+	std::cout << "---------------------------------------------------------------------" << std::endl << std::endl;
+	std::cout << "---------------------------------------------------------------------" << std::endl << std::endl;
 
 	system("pause");
 	return 0;
