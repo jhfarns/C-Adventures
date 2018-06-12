@@ -10,7 +10,7 @@ class Student {
 		std::string get_last_name();
 		std::string get_email_address();
 		int  get_age();
-		int get_num_days();
+		int* get_num_days();
 
 		//set functions	
 		void set_student_ID(int param_ID);

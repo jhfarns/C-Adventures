@@ -1,3 +1,3 @@
 #pragma once
 
-enum Degree {SECURITY, NETWORK, SOFTWARE};
+enum Degree {SECURITY, NETWORKING, SOFTWARE};

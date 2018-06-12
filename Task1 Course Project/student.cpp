@@ -25,8 +25,8 @@ int Student::get_age() {
 	return age;
 }
 
-int Student::get_num_days() {
-	return num_of_days[3];
+int* Student::get_num_days() {
+	return num_of_days;
 }
 
 //Initialize set functions for student.h file
@@ -94,8 +94,22 @@ void Student::print() {
 	}
 	std::cout << "}\t";
 	
-	std::cout << "Degree Program: " << getDegreeProgram();
+	std::cout << "Degree Program: ";
 	//Put in a switch statement for me :) so I don't print out a 1
+	
+	switch (getDegreeProgram()) {
+		case SECURITY:	
+			cout << "SECURITY";
+			break;
+		case NETWORKING:
+			cout << "NETWORKING";
+			break;
+		case SOFTWARE: 
+			cout << "SOFTWARE";
+			break;
+		default:
+			break;
+	}
 
 	std::cout << std::endl;
 	

@@ -12,6 +12,7 @@ class Roster {
 		void printDaysInCourse(std::string studentID);
 		void printInvalidEmails();
 		void printByDegreeProgram(int degreeProgram);
+		std::vector<Student*> get_class_roster_array();
 		
 		//Constructor
 
